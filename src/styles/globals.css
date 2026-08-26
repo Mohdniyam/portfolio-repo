@@ -1,0 +1,44 @@
+:root {
+  --section-radius: 24px;
+  --section-padding: 1.25rem; /* 20px */
+  --section-gap: 1.5rem; /* 24px */
+  --muted: #9ca3af;
+}
+
+html, body, #root {
+  height: 100%;
+  min-width: 1280px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Section card used across major sections to normalize spacing and visual rhythm */
+.section-card {
+  border-radius: var(--section-radius);
+  padding: var(--section-padding);
+  margin-top: var(--section-gap);
+}
+
+/* Headings inside sections */
+.section-card h2,
+.section-card h1 {
+  margin: 0 0 0.5rem 0;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Safe area helper */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0);
+}

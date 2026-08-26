@@ -12,7 +12,7 @@ const Project = () => {
   };
 
   return (
-    <section id="projects" className="bg-fgm-black text-white px-6 py-16">
+    <section id="projects" className="section-card rounded-[24px] border border-white/10 bg-[#121212] px-5 py-8 sm:px-8 sm:py-10 lg:px-10 text-white">
       {/* Heading */}
       <div className="flex flex-col justify-start mb-10 md:text-start xxs:text-center md:my-3 xxs:my-6">
         <h1 className="md:text-[100px] xs:text-left xxs:text-[50px] xxxs:text-center xxxs:text-[50px] font-bold text-white -mt-8 transform scale-x-96 origin-left uppercase">
@@ -31,41 +31,49 @@ const Project = () => {
             <div
               key={index}
               onClick={() => toggleExpand(index)}
-              className="relative group bg-[#1a1a1a] hover:bg-[#222] transition-all duration-300 rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-start gap-6 cursor-pointer"
+              className="relative group overflow-hidden rounded-[24px] border border-white/10 bg-[#121212] p-6 md:p-8 flex flex-col sm:flex-row items-start gap-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:bg-[#171717]"
             >
-              {/* Arrow Icon */}
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+
               <ArrowUpRight
                 className="absolute top-6 right-6 text-[#8e8e8e] group-hover:text-white transition"
                 size={20}
               />
 
-              {/* Project Image */}
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-24 h-16 sm:w-28 sm:h-20 md:w-32 md:h-24 rounded-lg object-contain bg-white/5 p-2"
+                className="relative w-24 h-16 sm:w-28 sm:h-20 md:w-32 md:h-24 rounded-xl object-cover bg-white/5 p-2 shadow-sm"
               />
 
-              {/* Project Details */}
-              <div className="flex-1">
+              <div className="relative flex-1">
                 <a
                   href={project.projectURL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()} // prevent expand toggle when link clicked
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  <h3 className="text-2xl md:text-3xl font-semibold text-white hover:text-[#B6B4BD] transition-colors duration-300">
+                  <h3 className="text-xl md:text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-orange-300">
                     {project.title}
                   </h3>
                 </a>
 
                 <p
-                  className={`text-[#9d9d9d] text-sm md:text-base mt-3 leading-relaxed overflow-hidden transition-all duration-500 ease-out ${
-                    isExpanded ? "max-h-96" : "max-h-12"
+                  className={`text-[#9d9d9d] text-sm md:text-base mt-3 leading-7 overflow-hidden transition-all duration-500 ease-out ${
+                    isExpanded ? "max-h-96" : "max-h-16"
                   }`}
                 >
                   {project.description}
                 </p>
+                <div className="mt-4 flex items-center gap-3">
+                  <a
+                    href={`#/case-studies/${project.slug}`}
+                    className="inline-flex items-center gap-2 rounded-full border border-orange-400/30 px-4 py-2 text-sm font-medium text-orange-300 transition hover:border-orange-400 hover:bg-orange-400/10"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Read Case Study <ArrowUpRight size={16} />
+                  </a>
+                </div>
               </div>
             </div>
           );

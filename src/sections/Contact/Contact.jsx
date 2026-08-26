@@ -74,9 +74,16 @@ const ContactForm = () => {
   return (
     <div
       id="contact"
-      className="bg-fgm-black text-white px-4 py-10 sm:px-6 max-w-3xl  rounded-2xl shadow-lg "
-      // style={{ border: "2px solid red" }}
+      className="section-card rounded-[24px] border border-white/10 bg-[#121212] px-5 py-8 text-white shadow-lg sm:px-8 sm:py-10 lg:px-10"
     >
+      {/* Contact card */}
+      <div className="w-full mb-6">
+        <div>
+          <p className="text-sm text-gray-400">Get in touch</p>
+          <h3 className="text-2xl font-bold">{contactData?.name}</h3>
+          <p className="text-sm text-gray-400">{data.Hero?.[0]?.title || "Full Stack Software Engineer"}</p>
+        </div>
+      </div>
       <div className="flex flex-col items-center xs:items-start sm:items-start text-center sm:text-left mb-10 my-6">
         <h1 className="md:text-[90px] xxs:text-left text-[50px] xs:text-left font-bold sm:text-left  text-white uppercase leading-none">
           Let's Work

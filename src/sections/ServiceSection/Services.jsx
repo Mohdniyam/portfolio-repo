@@ -20,49 +20,38 @@ const Services = () => {
   // const projectNumber = projectCompleted.replace(/[^\d.]/g, "");
 
   return (
-    <div className="">
-      {/* Heading Section */}
-      <div className="bg-fgm-black px-6 md:text-start xxs:text-center md:my-3 xxs:my-6">
-        <div className="flex flex-col justify-start">
-          <h1 className="md:text-[100px] xs:text-left xxxs:mt-2.5 xxxs:text-center xxxs:text-[50px] xxs:text-[50px] font-bold text-white -mt-8 transform scale-x-96 origin-left uppercase">
-            Software
-          </h1>
-          <h1 className="md:text-[100px] xs:text-left xxs:text-[50px] xxxs:text-[50px] xxxs:text-center xxs:-mt-6 font-bold text-[#B6B4BD] md:-mt-12 uppercase">
-            Engineer
-          </h1>
+    <section className="section-card rounded-[24px] border border-white/10 bg-[#121212] px-5 py-8 sm:px-8 sm:py-10 lg:px-10">
+      <div className="flex flex-col gap-6 md:gap-8">
+        <div className="text-center md:text-left">
+          <p className="text-sm uppercase tracking-[0.35em] text-orange-400">Software Engineer</p>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-white">
+            Building reliable software systems for product growth.
+          </h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#9d9a9a] sm:text-base">
+            {description}
+          </p>
         </div>
 
-        {/* Dynamic Description */}
-        <p className="md:w-9/12 lg:w-11/12 py-3 text-[#998f8f]">
-          {description}
-        </p>
-      </div>
-
-      {/* Experience & Projects Section */}
-      <div className="w-full md:w-11/12 px-4 md:px-6">
-        <div className="flex flex-col md:flex-row w-full items-center md:items-start justify-center md:justify-start gap-6 md:gap-10">
-          {/* Years of Experience */}
-          <div className="flex flex-col justify-between items-center md:items-start w-full md:w-[200px]">
-            <h1 className="text-[48px] sm:text-[56px] md:text-[68px] font-bold text-fgm-white md:transform md:scale-x-150 md:origin-left tracking-tight">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-[#171717] p-5">
+            <h3 className="text-[40px] font-semibold text-white sm:text-[46px]">
               {yearOfExperience}
-            </h1>
-            <h2 className="text-[#998F8F] text-center md:text-left text-sm sm:text-base">
-              YEAR OF <br /> EXPERIENCE
-            </h2>
+            </h3>
+            <p className="mt-2 text-sm uppercase tracking-[0.25em] text-[#998f8f]">
+              Years of experience
+            </p>
           </div>
-
-          {/* Projects Completed */}
-          <div className="flex flex-col justify-between items-center md:items-start w-full md:w-[250px]">
-            <h1 className="text-[48px] sm:text-[56px] md:text-[68px] font-bold text-fgm-white md:transform md:scale-x-150 md:origin-left tracking-tight">
+          <div className="rounded-2xl border border-white/10 bg-[#171717] p-5">
+            <h3 className="text-[40px] font-semibold text-white sm:text-[46px]">
               {projectCompleted}
-            </h1>
-            <h2 className="text-[#998F8F] text-center md:text-left text-sm sm:text-base">
-              PROJECTS <br /> COMPLETED
-            </h2>
+            </h3>
+            <p className="mt-2 text-sm uppercase tracking-[0.25em] text-[#998f8f]">
+              Projects completed
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

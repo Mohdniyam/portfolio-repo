@@ -1,91 +1,248 @@
 {
-  "ServiceSection": [
-    {
-      "description": "Software Engineer with 2+ years of experience in full-stack development (React.js, Node.js, RESTful APIs) and hands-on experience in AWS services including EC2, S3, IAM, VPC, and Linux administration. Skilled in troubleshooting microservices, and problem-solving. Completed AWS re/Start training and currently seeking a Cloud Support or Software Engineer role.",
-      "yearOfExperience": "2",
-      "projectCompleted": "6+"
-    }
-  ],
+  "ServiceSection": [{
+    "description": "Full Stack Developer and Tech Lead with 3+ years of experience building multi-tenant SaaS, e-commerce, and cloud applications. I specialize in Node.js, React, TypeScript, PostgreSQL, Redis, Shopify integrations, backend performance, and AWS delivery pipelines.",
+    "yearOfExperience": "3+",
+    "projectCompleted": "3+"
+  }],
   "Blog": [],
-  "Contact": [{ "name": "Moaaz Ahmed", "email": "moaaz.ds@gmail.com" }],
-  "Experience": [
-    {
-      "exp": "2 YEAR OF",
-      "items": [
-        {
-          "title": "Software Developer | Publicis Sapient",
-          "date": "Oct 2021 - Dec 2022",
-          "responsibilities": [
-            "Managed troubleshooting and resolving post-deployment issues and debugging (L3 support) across multiple markets, reducing bug turnaround time by 30%.",
-            "Developed and maintained full-stack features for Nestlé brand portals, handling frontend interfaces and backend integrations.",
-            "Designed and consumed RESTful APIs in collaboration with backend teams, handled JSON data mapping, error handling, and security (JWT).",
-            "Built responsive UI components using HTML, Twig, SCSS, JavaScript, and jQuery, ensuring cross-browser compatibility and WCAG AAA accessibility compliance."
-          ]
-        },
-        {
-          "title": "MERN | Embifi Pvt. Ltd.",
-          "date": "Feb 2021 - Sep 2021",
-          "responsibilities": [
-            "Developed and deployed company’s website using MERN stack, optimized for mobile, tablet, and desktop.",
-            "Worked with backend team to ensure API efficiency and integrated server side data into frontend views, improving user engagement."
-          ]
-        }
-      ]
-    }
-  ],
-  "Hero": [
-    {
-      "imageURL": "img",
-      "name": "Moaaz Ahmed",
-      "description": "Cloud Engineer in Training (AWS re/START) | Software Developer - React, Node, JavaScript, C++ | M.Tech IT – NSUT Delhi | Ex-Publicis Sapient",
-      "email": "moaaz.ds@gmail.com",
-      "leetCode": "https://leetcode.com/u/moaaz-ahmed/",
-      "gitHub": "https://github.com/moaaz-cse",
-      "linkedIn": "https://www.linkedin.com/in/moaaz-ahmed-70607621b/"
-    }
-  ],
+  "Contact": [{
+    "name": "Mohd Niya Mul Haque",
+    "email": "niyamul.haque98@gmail.com",
+    "phone": "+91 9220774381",
+    "linkedIn": "https://www.linkedin.com/in/mohd-niya-mul-haque-cse",
+    "portfolio": "https://niyam-portfolio.pages.dev"
+  }],
+  "Experience": [{
+    "exp": "3+ YEARS OF",
+    "items": [
+      {
+        "title": "Full Stack Developer (Tech Lead) | UNICSI",
+        "date": "Sep 2025 - Present",
+        "responsibilities": [
+          "Led end-to-end architecture and R&D for a multi-tier dropshipping SaaS platform serving suppliers, dropshippers, and super administrators.",
+          "Engineered a Shopify integration layer for product imports and bidirectional order synchronization, significantly reducing manual fulfilment work.",
+          "Built a centralized Super Admin dashboard with real-time control over users, orders, inventory, and financial operations.",
+          "Established an AWS CI/CD pipeline that reduced deployment time and enabled zero-downtime releases across platform services.",
+          "Mentored team members on system design, code quality, and scalable architecture patterns.",
+          "Tech: Node.js, Express.js, React.js, Next.js, TypeScript, PostgreSQL, Sequelize ORM, AWS S3, and AWS Lambda."
+        ]
+      },
+      {
+        "title": "Full Stack Developer | QuadB Technology",
+        "date": "Oct 2023 - Jul 2025",
+        "responsibilities": [
+          "Reduced page-load time by 40% by adding Redis caching to high-traffic endpoints, while lowering infrastructure costs.",
+          "Improved PostgreSQL query performance by 60% through strategic indexing and query optimization.",
+          "Designed a custom SDK-based micro-frontend bridge that let child applications access host data without tight coupling.",
+          "Delivered a deployable e-commerce storefront covering product discovery, pagination, cart, checkout, payments, and order status.",
+          "Tech: Node.js, Express.js, React.js, TypeScript, PostgreSQL, Sequelize ORM, Redis, and EJS."
+        ]
+      },
+      {
+        "title": "MERN Stack Developer | Embifi",
+        "date": "Mar 2023 - Sep 2023",
+        "responsibilities": [
+          "Built and launched the company marketing website with the MERN stack to strengthen its online presence and support lead generation.",
+          "Created a cross-device interface for mobile, tablet, laptop, and large-screen viewports.",
+          "Integrated complex server-side data with efficient frontend state management to improve rendering performance and user experience.",
+          "Tech: React.js, Node.js, Express.js, MongoDB, JavaScript, and TypeScript."
+        ]
+      }
+    ]
+  }],
+  "Hero": [{
+    "imageURL": "img",
+    "name": "Mohd Niya Mul Haque",
+    "title": "Full Stack Developer & Tech Lead | Node.js • React • AWS",
+    "description": "I architect multi-tenant SaaS and e-commerce products, optimize backend performance, and ship reliable cloud deployments.",
+    "location": "New Delhi, India",
+    "email": "niyamul.haque98@gmail.com",
+    "leetCode": "https://leetcode.com/u/Niyamul_Haque",
+    "gitHub": "https://github.com/Mohdniyam",
+    "linkedIn": "https://www.linkedin.com/in/mohd-niya-mul-haque-cse",
+    "portfolioURL": "https://niyam-portfolio.pages.dev/",
+    "resumeURL": "https://drive.google.com/file/d/1x70hWmbZSP2jzXsHOV6JJdi_T4kyUX_p/view?usp=drivesdk"
+  }],
   "Home": [],
   "Nav": [],
   "Projects": [
     {
-      "title": "DevTinder (Personal Project)",
-      "description": "Architected and implemented a React.js web application for developer matchmaking based on skills and interests. Designed a RESTful API with Node.js and Express.js, integrated MongoDB for storing user profiles. Implemented authentication and authorization using JWT, built a messaging feature for real-time user interaction.",
-      "image": "https://www.nestlegoodnes.com/fr/sites/default/files/styles/medium/public/logos/logo-garden-gourmet.png?itok=cOhd16Zb",
-      "projectURL": "https://github.com/moaaz-cse/devTinder"
+      "slug": "unicsi-multi-tier-dropshipping-saas-platform",
+      "title": "UNICSI - Multi-Tier Dropshipping SaaS Platform",
+      "description": "Architected a multi-role platform connecting suppliers, Shopify-based dropshippers, and a Super Admin. Built product synchronization, automated order routing, role-based access control, operational dashboards, and zero-downtime AWS delivery pipelines.",
+      "image": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
+      "projectURL": "https://unicsi.com",
+      "stack": ["Node.js", "Express.js", "React.js", "Next.js", "TypeScript", "PostgreSQL", "AWS S3", "AWS Lambda"]
     },
     {
-      "title": "Nestle GardenGourmet-FRLaunch-2022:",
-      "description": "Independently implemented themes in the French market. Ensured responsive layout and optimized asset loading, achieving a 20% improvement in page load times. Using Twig, SCSS, JavaScript, and jQuery.",
-      "image": "https://www.nestlegoodnes.com/fr/sites/default/files/styles/medium/public/logos/logo-garden-gourmet.png?itok=cOhd16Zb",
-      "projectURL": "https://www.gardengourmet.fr/"
+      "slug": "owr-online-store-management-saas",
+      "title": "OWR - Online Store Management SaaS",
+      "description": "Built a multi-tenant SaaS product for product management, order processing, and shipment tracking. Integrated Delhivery and Shiprocket logistics, PhonePe and Razorpay payments, an in-app wallet, and subscription billing.",
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+      "projectURL": "https://github.com/Mohdniyam",
+      "stack": ["Node.js", "Express.js", "React.js", "TypeScript", "PostgreSQL", "Redis", "EJS"]
     },
     {
-      "title": "Maggi Arabia accessibility enhancement",
-      "description": "Enhanced website accessibility to meet AAA standards, including semantic markup, ARIA roles, and keyboard navigation. Coordinated with UX designers and QA engineers to validate improvements and document testing procedures.",
-      "image": "https://www.maggiarabia.com/sites/default/files/maggi_logo1_0.png",
-      "projectURL": "https://www.maggiarabia.com/en/"
+      "slug": "dukkandaar-e-commerce-saas-platform",
+      "title": "Dukkandaar - E-Commerce & SaaS Platform",
+      "description": "Developed modular web and mobile commerce applications with dedicated Admin, Seller, and Buyer experiences, plus coupons, promotional deals, and real-time analytics. Shipped the cross-platform mobile application with React Native.",
+      "image": "https://images.unsplash.com/photo-1556742111-a301076d9d18?auto=format&fit=crop&w=1200&q=80",
+      "projectURL": "https://github.com/Mohdniyam",
+      "stack": ["Node.js", "Express.js", "React.js", "React Native", "TypeScript", "PostgreSQL"]
+    }
+  ],
+  "CaseStudies": [
+    {
+      "slug": "unicsi-multi-tier-dropshipping-saas-platform",
+      "title": "UNICSI - Multi-Tier Dropshipping SaaS Platform",
+      "period": "2025 - Present",
+      "category": "Dropshipping SaaS",
+      "role": "Tech Lead & Full Stack Developer",
+      "platform": "Multi-tenant web platform",
+      "projectURL": "https://unicsi.com",
+      "stack": ["Node.js", "Express.js", "React.js", "Next.js", "TypeScript", "PostgreSQL", "Sequelize", "AWS"],
+      "overview": "A multi-role dropshipping platform connecting suppliers, Shopify-based resellers, and administrators through one operational system.",
+      "challenge": "Suppliers, dropshippers, and platform administrators needed to coordinate catalogue data, Shopify stores, orders, fulfilment, inventory, and financial operations without relying on disconnected manual processes. The platform also needed strong role boundaries and a delivery setup that could evolve safely as the product grew.",
+      "highlights": ["Three-role architecture", "Shopify product and order synchronization", "Automated supplier fulfilment routing", "Zero-downtime AWS releases"],
+      "approach": [
+        { "title": "Model the roles", "description": "Defined clear capabilities and data boundaries for Suppliers, Dropshippers, and Super Admin users before shaping the platform modules." },
+        { "title": "Connect the lifecycle", "description": "Mapped products, imports, Shopify stores, orders, inventory, fulfilment, and financial operations as one connected commerce lifecycle." },
+        { "title": "Design for operations", "description": "Created centralized administration and automated delivery so the team could operate and release the platform reliably." }
+      ],
+      "implementation": [
+        { "title": "Shopify integration layer", "description": "Built workflows that let dropshippers import supplier products and synchronize orders bidirectionally with connected Shopify stores." },
+        { "title": "Automated order routing", "description": "Connected incoming store orders to the appropriate supplier fulfilment panels, reducing repetitive manual coordination." },
+        { "title": "Central Super Admin", "description": "Delivered real-time oversight and control for users, orders, inventory, and financial activity across the platform." },
+        { "title": "AWS delivery pipeline", "description": "Established CI/CD across platform services using AWS infrastructure to support consistent, zero-downtime releases." }
+      ],
+      "outcomes": [
+        { "title": "Unified operations", "description": "Products, orders, inventory, users, and financial activity can be managed through one platform." },
+        { "title": "Less manual fulfilment", "description": "Shopify synchronization and supplier routing automate key parts of the dropshipping workflow." },
+        { "title": "Safer releases", "description": "The CI/CD pipeline enables repeatable deployments without planned platform downtime." }
+      ]
+    },
+    {
+      "slug": "owr-online-store-management-saas",
+      "title": "OWR - Online Store Management SaaS",
+      "period": "2024 - 2025",
+      "category": "Commerce Operations",
+      "role": "Full Stack Developer",
+      "platform": "Multi-tenant SaaS",
+      "projectURL": "https://github.com/Mohdniyam",
+      "stack": ["Node.js", "Express.js", "React.js", "TypeScript", "PostgreSQL", "Redis", "EJS"],
+      "overview": "A multi-tenant operating system for commerce, logistics, payments, wallets, and subscriptions.",
+      "challenge": "Online sellers needed a single system to manage daily store operations. Product data, orders, logistics partners, customer payments, wallet balances, and recurring subscriptions all had to work together while remaining isolated for each tenant.",
+      "highlights": ["Product and order management", "Delhivery and Shiprocket integrations", "PhonePe and Razorpay payments", "Wallet and subscription billing"],
+      "approach": [
+        { "title": "Unify store workflows", "description": "Organized product, order, shipment, payment, wallet, and subscription capabilities around the complete store operating cycle." },
+        { "title": "Isolate tenant data", "description": "Designed the SaaS workflows so multiple stores could use shared services while retaining clear operational boundaries." },
+        { "title": "Abstract integrations", "description": "Kept logistics and payment providers behind focused integration layers to simplify business workflows and future changes." }
+      ],
+      "implementation": [
+        { "title": "Commerce management", "description": "Built product administration and order-processing workflows for the day-to-day operation of online stores." },
+        { "title": "Logistics connectivity", "description": "Integrated Delhivery and Shiprocket to create and track shipments through real-time provider workflows." },
+        { "title": "Payment processing", "description": "Connected PhonePe and Razorpay payment gateways to checkout and transaction-management flows." },
+        { "title": "Wallets and subscriptions", "description": "Developed an in-app wallet and subscription billing capabilities within the same tenant-aware platform." }
+      ],
+      "outcomes": [
+        { "title": "One operating system", "description": "Stores can manage catalogue, orders, shipments, payments, and billing without switching between disconnected tools." },
+        { "title": "Flexible fulfilment", "description": "Multiple logistics providers give operators more control over shipment creation and tracking." },
+        { "title": "Built-in monetization", "description": "Payment gateways, wallets, and subscriptions support transactional and recurring revenue workflows." }
+      ]
+    },
+    {
+      "slug": "dukkandaar-e-commerce-saas-platform",
+      "title": "Dukkandaar - E-Commerce & SaaS Platform",
+      "period": "2024",
+      "category": "Web & Mobile Commerce",
+      "role": "Full Stack Developer",
+      "platform": "Web and React Native apps",
+      "projectURL": "https://github.com/Mohdniyam",
+      "stack": ["Node.js", "Express.js", "React.js", "React Native", "TypeScript", "PostgreSQL"],
+      "overview": "A modular commerce platform with separate Admin, Seller, and Buyer products across web and mobile.",
+      "challenge": "A marketplace experience had to serve three audiences with very different responsibilities: administrators managing the ecosystem, sellers running their businesses, and buyers shopping across web and mobile. Shared commerce features needed to stay consistent without turning the applications into one tightly coupled interface.",
+      "highlights": ["Role-specific modules", "Coupons and promotions", "Real-time analytics", "React Native application"],
+      "approach": [
+        { "title": "Separate user journeys", "description": "Divided the experience into dedicated Admin, Seller, and Buyer modules with role-specific navigation and capabilities." },
+        { "title": "Share the commerce core", "description": "Centralized common product, promotion, order, and analytics rules behind the web and mobile experiences." },
+        { "title": "Plan for two clients", "description": "Structured features so React web interfaces and the React Native application could consume consistent backend behavior." }
+      ],
+      "implementation": [
+        { "title": "Role-based modules", "description": "Implemented focused workspaces for platform administration, seller operations, and the buyer shopping journey." },
+        { "title": "Promotions engine", "description": "Added coupon and promotional-deal workflows that could be managed by authorized roles and applied during shopping." },
+        { "title": "Live analytics", "description": "Created dashboards that surface current business activity and performance to operational users." },
+        { "title": "Cross-platform mobile app", "description": "Delivered the buyer-facing mobile experience using React Native alongside the web platform." }
+      ],
+      "outcomes": [
+        { "title": "Clear role ownership", "description": "Each audience receives a purpose-built workflow while operating on the same commerce platform." },
+        { "title": "Web and mobile reach", "description": "Buyers can access the shopping experience through both browser and cross-platform mobile clients." },
+        { "title": "Actionable visibility", "description": "Real-time dashboards help administrators and sellers understand ongoing platform activity." }
+      ]
+    }
+  ],
+  "WhatIBuild": [
+    {
+      "title": "Multi-Tenant SaaS Platforms",
+      "description": "I design role-aware products with clear service boundaries, secure access, and operational tools for multiple customer groups.",
+      "points": ["Multi-role architecture", "Role-based access control", "Micro-frontend integrations", "Operational dashboards"]
+    },
+    {
+      "title": "E-Commerce Systems",
+      "description": "I build connected commerce journeys spanning storefronts, inventory, orders, fulfilment, logistics, and payments.",
+      "points": ["Shopify synchronization", "Cart and checkout flows", "Delhivery and Shiprocket", "PhonePe, Razorpay, wallets, and subscriptions"]
+    },
+    {
+      "title": "High-Performance Backends",
+      "description": "I improve application speed and reliability through deliberate API design, data modelling, indexing, and caching.",
+      "points": ["RESTful APIs and microservices", "PostgreSQL optimization", "Redis caching", "System and database design"]
+    },
+    {
+      "title": "Cloud Delivery & DevOps",
+      "description": "I deploy and operate applications on AWS with automated delivery, observability, and secure infrastructure practices.",
+      "points": ["EC2, S3, Lambda, IAM, and VPC", "CI/CD and zero-downtime releases", "CloudWatch and CloudTrail", "Docker, Linux, and networking"]
     }
   ],
   "Skills": [
-    {
-      "name": "JavaScript",
-      "icon": "SiJavascript",
-      "color": "text-yellow-400"
-    },
-    { "name": "Python", "icon": "SiPython", "color": "text-blue-400" },
-    { "name": "React.js", "icon": "FaReact", "color": "text-cyan-400" },
+    { "name": "JavaScript", "icon": "SiJavascript", "color": "text-yellow-400" },
+    { "name": "TypeScript", "icon": "SiTypescript", "color": "text-blue-500" },
     { "name": "Node.js", "icon": "FaNodeJs", "color": "text-green-500" },
     { "name": "Express.js", "icon": "SiExpress", "color": "text-gray-300" },
+    { "name": "React.js", "icon": "FaReact", "color": "text-cyan-400" },
+    { "name": "React Native", "icon": "FaReact", "color": "text-cyan-500" },
+    { "name": "Next.js", "icon": "SiNextdotjs", "color": "text-white" },
+    { "name": "PostgreSQL", "icon": "SiPostgresql", "color": "text-blue-600" },
     { "name": "MongoDB", "icon": "SiMongodb", "color": "text-green-600" },
-    { "name": "SQL", "icon": "SiMysql", "color": "text-blue-600" },
+    { "name": "Redis", "icon": "SiRedis", "color": "text-red-500" },
+    { "name": "Docker", "icon": "SiDocker", "color": "text-blue-400" },
+    { "name": "Git", "icon": "FaGitAlt", "color": "text-orange-500" },
     { "name": "AWS", "icon": "FaAws", "color": "text-orange-400" },
-    { "name": "Git", "icon": "FaGitAlt", "color": "text-red-500" },
-    { "name": "Postman", "icon": "SiPostman", "color": "text-orange-500" }
+    { "name": "SQL", "icon": "FaDatabase", "color": "text-sky-400" },
+    { "name": "System Design", "icon": "FaCode", "color": "text-purple-400" },
+    { "name": "CI/CD", "icon": "FaCodeBranch", "color": "text-emerald-400" }
   ],
-  "GitHub": [
-    {
-      "userName": "moaaz-cse"
-    }
+  "GitHub": [{ "userName": "Mohdniyam" }],
+  "Tools": [],
+  "About": {
+    "intro": "I'm a Full Stack Developer and Tech Lead with 3+ years of experience architecting SaaS, e-commerce, and cloud products.",
+    "summary": "My recent work includes leading UNICSI's multi-tier dropshipping platform, improving page-load performance by 40% with Redis, accelerating PostgreSQL queries by 60%, and delivering AWS CI/CD pipelines for zero-downtime releases.",
+    "location": "New Delhi, India",
+    "coreTechnologies": ["JavaScript", "TypeScript", "Node.js", "Express.js", "React.js", "Next.js", "React Native", "PostgreSQL", "MongoDB", "Redis", "Docker", "AWS"],
+    "expertise": ["RESTful APIs", "Microservices", "System Design", "Database Indexing", "Caching Strategies", "CI/CD", "Cloud Architecture"]
+  },
+  "Certifications": [
+    { "title": "AWS re/Start - Cloud Practitioner Training", "issuer": "Jamia Millia Islamia and Amazon Web Services", "dates": "Aug 2025 - Dec 2025", "score": "85/100" },
+    { "title": "Advanced Data Structures & Algorithms", "issuer": "Coding Blocks" },
+    { "title": "Full Stack Web Development Bootcamp", "issuer": "Udemy" }
   ],
-  "Tools": []
+  "Education": [{
+    "institution": "Jamia Hamdard, New Delhi",
+    "program": "B.Tech. in Computer Science and Engineering",
+    "dates": "Aug 2017 - Aug 2021",
+    "score": "CGPA: 7.4/10"
+  }],
+  "Achievements": [
+    "Nominated to lead internal tech talks on system design and backend performance optimization.",
+    "Reduced page-load time by 40% through Redis caching on high-traffic endpoints.",
+    "Improved PostgreSQL query performance by 60% through indexing and query optimization."
+  ]
 }

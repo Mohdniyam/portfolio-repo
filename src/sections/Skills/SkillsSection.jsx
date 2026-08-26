@@ -17,7 +17,7 @@ const SkillsSection = () => {
   const skills = data.Skills || [];
 
   return (
-    <section id="skills" className="bg-fgm-black text-white px-6 py-16">
+    <section id="skills" className="section-card rounded-[24px] border border-white/10 bg-[#121212] px-5 py-8 sm:px-8 sm:py-10 lg:px-10 text-white">
       {/* Heading */}
       <div className="flex flex-col justify-start mb-10 md:text-start xxs:text-center md:my-3 xxs:my-6">
         <h1 className="md:text-[100px] xs:text-left xxs:text-[50px] xxxs:text-center xxxs:text-[50px] font-bold text-white -mt-8 transform scale-x-96 origin-left uppercase">

@@ -37,20 +37,20 @@ export default function MobileNavbar() {
     >
       <div
         style={{
-          // border: "2px solid blue",
           padding: "10px",
-          background: "rgba(255, 255, 255, 0.08)", // Correct way to use rgba for background
+          background: "rgba(255, 255, 255, 0.08)",
           borderRadius: "8px",
           backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)", // For Safari support
+          WebkitBackdropFilter: "blur(10px)",
         }}
-        className="w-[292px] flex justify-between"
+        className="w-full max-w-3xl flex justify-between px-2"
       >
         <Link
           to="hero"
           smooth={true}
           duration={800}
-          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer"
+          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer p-2 rounded-md hover:bg-white/5"
+          aria-label="Go to hero"
         >
           <FaUser className="text-xl" />
         </Link>
@@ -58,7 +58,8 @@ export default function MobileNavbar() {
           to="home"
           smooth={true}
           duration={800}
-          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer"
+          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer p-2 rounded-md hover:bg-white/5"
+          aria-label="Go to home"
         >
           <FaHome className="text-xl" />
         </Link>
@@ -66,7 +67,8 @@ export default function MobileNavbar() {
           to="projects"
           smooth={true}
           duration={800}
-          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer"
+          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer p-2 rounded-md hover:bg-white/5"
+          aria-label="Go to projects"
         >
           <FaFolderOpen className="text-xl" />
         </Link>
@@ -74,7 +76,8 @@ export default function MobileNavbar() {
           to="skills"
           smooth={true}
           duration={800}
-          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer"
+          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer p-2 rounded-md hover:bg-white/5"
+          aria-label="Go to skills"
         >
           <FaTools className="text-xl" />
         </Link>
@@ -82,7 +85,8 @@ export default function MobileNavbar() {
           to="experience"
           smooth={true}
           duration={800}
-          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer"
+          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer p-2 rounded-md hover:bg-white/5"
+          aria-label="Go to experience"
         >
           <FaBriefcase className="text-xl" />
         </Link>
@@ -90,7 +94,8 @@ export default function MobileNavbar() {
           to="contact"
           smooth={true}
           duration={800}
-          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer"
+          className="flex flex-col items-center md:flex-row md:space-x-2 cursor-pointer p-2 rounded-md hover:bg-white/5"
+          aria-label="Go to contact"
         >
           <FaEnvelope className="text-xl" />
         </Link>

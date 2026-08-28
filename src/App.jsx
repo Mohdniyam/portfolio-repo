@@ -46,22 +46,22 @@ export default function App() {
   return (
     <div className="min-h-screen bg-fgm-black text-white">
       <Nav />
-      <div className="mx-auto flex w-full max-w-7xl flex-row items-start gap-8 px-8 py-8">
-        <div className="sticky top-20 w-[34%] max-h-[calc(100vh-4rem)] self-start overflow-auto">
+      <main className="mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-5 px-4 pb-8 pt-24 sm:gap-8 sm:px-6 lg:grid-cols-[minmax(280px,360px)_minmax(0,1fr)] lg:px-8">
+        <div className="w-full self-start lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-auto">
           <div className="flex justify-start">
             <Hero />
           </div>
         </div>
 
         <div
-          className="w-[66%]"
+          className="min-w-0 w-full"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
             paddingTop: 'env(safe-area-inset-top, 0px)'
           }}
         >
-          <div className="space-y-8">
+          <div className="space-y-5 sm:space-y-8">
             <Services />
             <WhatIBuild />
             <FlagshipProject />
@@ -77,7 +77,7 @@ export default function App() {
             <ContactForm />
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

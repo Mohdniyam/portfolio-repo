@@ -66,19 +66,19 @@ const GithubContributions = () => {
 
   return (
     <section
-      id="experience"
-      className="bg-fgm-black text-white px-6 py-10 mt-10 xxxs:-mt-8"
+      id="github"
+      className="section-card overflow-hidden rounded-[24px] border border-white/10 bg-[#121212] px-5 py-8 text-white sm:px-8 sm:py-10 lg:px-10"
     >
       <div className="text-center md:text-left  md:w-11/12 ">
-        <h1 className="text-[40px] sm:text-[45px] xs:text-left md:text-[90px] font-bold xxxs:text-center xxxs:text-[38px] text-white uppercase leading-tight">
+        <h1 className="text-4xl font-bold uppercase leading-none text-white sm:text-5xl xl:text-7xl">
           GitHub
         </h1>
-        <h1 className="text-[40px] xs:text-left sm:text-[45px] md:text-[90px] xxxs:text-center xxxs:text-[38px] font-bold text-[#B6B4BD] uppercase -mt-2 md:-mt-6">
+        <h1 className="mt-1 text-4xl font-bold uppercase leading-none text-[#B6B4BD] sm:text-5xl xl:text-7xl">
           Contribution
         </h1>
       </div>
 
-      <div className="min-h-[340px]  sm:min-h-[350px] max-w-5xl md:w-11/12 ml-0">
+      <div className="mt-8 min-h-[340px] w-full max-w-5xl sm:min-h-[350px]">
         {/* Graph and Year Buttons Container */}
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
           {/* Left: Graph */}
@@ -90,13 +90,13 @@ const GithubContributions = () => {
             ) : error ? (
               <p className="text-red-400 text-center">{error}</p>
             ) : weeks.length > 0 ? (
-              <div className="min-w-[600px] ml-2 py-3 sm:min-w-0">
+              <div className="min-w-[1100px] py-3">
                 {/* Month labels */}
-                <div className="flex justify-evenly mb-2 text-[24px] text-gray-400">
+                <div className="flex mb-2 text-sm text-gray-400">
                   {monthLabels.map((m, i) => {
                     if (m.length > 0) {
                       return (
-                        <div key={i} className="w-9 text-center px-12">
+                        <div key={i} className="w-[22px] shrink-0 text-left">
                           {m}
                         </div>
                       );

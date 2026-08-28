@@ -47,14 +47,14 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="w-full max-w-[340px] bg-gradient-to-b from-white via-[#fcfbfa] to-[#f4f2ee] rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.16)] flex flex-col items-center justify-center gap-4 p-5 sm:p-7 md:w-[320px] lg:w-full lg:max-w-[360px] mx-auto"
+      className="mx-auto flex w-full max-w-md flex-col items-center justify-center gap-4 rounded-[22px] bg-gradient-to-b from-white via-[#fcfbfa] to-[#f4f2ee] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.16)] sm:rounded-[28px] sm:p-7 lg:max-w-[360px]"
     >
       {/* Profile image box */}
       <div className="rounded-[24px] border border-black/5 bg-gradient-to-br from-[#111111] via-[#242424] to-[#0f0f0f] p-2 shadow-inner">
         <img
           src={processedImage || img}
           alt={profileName}
-          className="w-44 h-52 sm:w-56 sm:h-60 md:w-60 md:h-64 rounded-[18px] object-cover"
+          className="h-52 w-44 rounded-[18px] object-cover sm:h-60 sm:w-56 lg:h-64 lg:w-60"
         />
       </div>
 

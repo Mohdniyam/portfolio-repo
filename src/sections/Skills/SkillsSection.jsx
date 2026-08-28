@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 // Import all icon packs you want to support
 import * as FaIcons from "react-icons/fa";
@@ -20,20 +20,20 @@ const SkillsSection = () => {
     <section id="skills" className="section-card rounded-[24px] border border-white/10 bg-[#121212] px-5 py-8 sm:px-8 sm:py-10 lg:px-10 text-white">
       {/* Heading */}
       <div className="flex flex-col justify-start mb-10 md:text-start xxs:text-center md:my-3 xxs:my-6">
-        <h1 className="md:text-[100px] xs:text-left xxs:text-[50px] xxxs:text-center xxxs:text-[50px] font-bold text-white -mt-8 transform scale-x-96 origin-left uppercase">
+        <h1 className="text-4xl font-bold uppercase leading-none text-white sm:text-5xl xl:text-7xl">
           Work
         </h1>
-        <h1 className="md:text-[100px] xs:text-left  xxs:text-[50px] xxxs:-mt-3 xxxs:text-center xxxs:text-[50px] xxs:-mt-6 font-bold text-[#B6B4BD] md:-mt-12 uppercase">
+        <h1 className="mt-1 text-4xl font-bold uppercase leading-none text-[#B6B4BD] sm:text-5xl xl:text-7xl">
           Expertise
         </h1>
       </div>
 
       {/* Skill Grid */}
-      <div className="md:w-9/12 lg:w-11/12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+      <div className="grid w-full grid-cols-1 gap-4 xxs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 sm:gap-6">
         {skills.map((skill, index) => {
           const IconComponent = iconMap[skill.icon]; // Automatically resolves
           return (
-            <motion.div
+            <Motion.div
               key={index}
               className="flex flex-col items-center text-center group"
               initial={{ opacity: 0, y: 40 }}
@@ -41,7 +41,7 @@ const SkillsSection = () => {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
             >
-              <div className="bg-[#1a1a1a] group-hover:bg-[#222] p-6 rounded-2xl transition-all duration-300 flex flex-col items-center justify-center shadow-md w-full">
+              <div className="flex min-h-32 w-full flex-col items-center justify-center rounded-2xl bg-[#1a1a1a] p-4 shadow-md transition-all duration-300 group-hover:bg-[#222] sm:p-6">
                 {IconComponent ? (
                   <IconComponent className={`text-5xl ${skill.color}`} />
                 ) : (
@@ -51,7 +51,7 @@ const SkillsSection = () => {
                   {skill.name}
                 </p>
               </div>
-            </motion.div>
+            </Motion.div>
           );
         })}
       </div>

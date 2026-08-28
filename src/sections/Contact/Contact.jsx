@@ -85,10 +85,10 @@ const ContactForm = () => {
         </div>
       </div>
       <div className="flex flex-col items-center xs:items-start sm:items-start text-center sm:text-left mb-10 my-6">
-        <h1 className="md:text-[90px] xxs:text-left text-[50px] xs:text-left font-bold sm:text-left  text-white uppercase leading-none">
+        <h1 className="text-left text-4xl font-bold uppercase leading-none text-white sm:text-5xl xl:text-7xl">
           Let's Work
         </h1>
-        <h1 className="md:text-[90px] xxs:text-left text-[50px] sm:text-left xs:text-left font-bold   text-[#B6B4BD] uppercase mt-2 md:mt-0 leading-none">
+        <h1 className="mt-2 text-left text-4xl font-bold uppercase leading-none text-[#B6B4BD] sm:text-5xl xl:text-7xl">
           Together
         </h1>
       </div>
@@ -160,7 +160,7 @@ const ContactForm = () => {
           {loading ? "Submitting..." : "Submit"}
         </button>
       </form>
-      <p className="mt-6 text-xs sm:text-sm text-gray-400 text-center">
+      <p className="mt-6 break-words text-center text-xs text-gray-400 sm:text-sm">
         Made by
         <a href="#" className="text-orange-500 hover:underline mx-1">
           {contactData.name}

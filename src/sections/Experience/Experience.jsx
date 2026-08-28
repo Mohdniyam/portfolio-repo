@@ -13,16 +13,16 @@ const Experience = () => {
     >
       {/* Header Section */}
       <div className="text-start mb-8 md:text-start xxs:text-center md:my-3 xxs:my-6">
-        <h1 className="md:text-[100px] xs:text-left xxs:text-[50px] xxxs:text-center xxxs:text-[40px] font-bold text-white -mt-8 transform scale-x-96 origin-left uppercase">
+        <h1 className="text-4xl font-bold uppercase leading-none text-white sm:text-5xl xl:text-7xl">
           {experienceData.exp}
         </h1>
-        <h1 className="md:text-[100px] xs:text-left  xxs:text-[50px] xxxs:-mt-3 xxxs:text-center xxxs:text-[40px] xxs:-mt-6 font-bold text-[#B6B4BD] md:-mt-12 uppercase">
+        <h1 className="mt-1 text-4xl font-bold uppercase leading-none text-[#B6B4BD] sm:text-5xl xl:text-7xl">
           EXPERIENCE
         </h1>
       </div>
 
       {/* Experience Cards */}
-      <div className="flex flex-col gap-6 md:w-11/12">
+      <div className="flex w-full flex-col gap-6">
         {experienceData.items.map((exp, idx) => (
           <div
             key={idx}

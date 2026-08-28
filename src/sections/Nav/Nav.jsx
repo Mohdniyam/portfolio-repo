@@ -31,7 +31,7 @@ export default function MobileNavbar() {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-fgm-black text-white flex justify-center items-center py-3 px-6 md:px-12 shadow-md transition-transform duration-300 z-50
+      className={`fixed top-0 left-0 w-full bg-fgm-black/95 text-white flex justify-center items-center pt-[calc(0.75rem+env(safe-area-inset-top))] pb-3 px-3 sm:px-6 md:px-12 shadow-md backdrop-blur-xl transition-transform duration-300 z-50
       ${showNav ? "translate-y-0" : "-translate-y-full"}`}
       // style={{ border: "2px solid red" }}
     >

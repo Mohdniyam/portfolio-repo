@@ -25,9 +25,9 @@ const CaseStudy = () => {
 
   if (!caseData) {
     return (
-      <main className="mx-auto min-h-screen w-[1180px] px-8 py-20">
+      <main className="mx-auto min-h-screen w-full max-w-[1180px] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <p className="text-sm uppercase tracking-[0.3em] text-orange-400">404</p>
-        <h1 className="mt-4 text-5xl font-semibold text-white">Case study not found.</h1>
+        <h1 className="mt-4 text-4xl font-semibold text-white sm:text-5xl">Case study not found.</h1>
         <p className="mt-4 text-lg text-gray-400">
           This project may have moved or the address may be incorrect.
         </p>
@@ -45,14 +45,14 @@ const CaseStudy = () => {
   return (
     <main className="min-h-screen bg-[#0d0d0d] text-white">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0d0d0d]/90 backdrop-blur-xl">
-        <div className="mx-auto flex h-20 w-[1180px] items-center justify-between px-8">
+        <div className="mx-auto flex min-h-20 w-full max-w-[1180px] items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
           <a
             href="#projects"
             className="inline-flex items-center gap-2 text-sm font-medium text-gray-300 transition hover:text-white"
           >
             <ArrowLeft size={18} /> Back to portfolio
           </a>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-400">
+          <p className="text-right text-[10px] font-semibold uppercase tracking-[0.2em] text-orange-400 sm:text-sm sm:tracking-[0.28em]">
             Project Case Study
           </p>
         </div>
@@ -61,18 +61,18 @@ const CaseStudy = () => {
       <article>
         <section className="relative overflow-hidden border-b border-white/10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.18),transparent_38%)]" />
-          <div className="relative mx-auto grid w-[1180px] grid-cols-[1.2fr_0.8fr] gap-16 px-8 py-24">
+          <div className="relative mx-auto grid w-full max-w-[1180px] grid-cols-1 gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16 lg:px-8 lg:py-24">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.3em] text-orange-400">
                 {caseData.period} · {caseData.category}
               </p>
-              <h1 className="mt-6 text-6xl font-semibold leading-[1.08] tracking-[-0.04em] text-white">
+              <h1 className="mt-6 text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
                 {caseData.title}
               </h1>
-              <p className="mt-7 max-w-3xl text-xl leading-9 text-[#b8b8b8]">
+              <p className="mt-7 max-w-3xl text-base leading-8 text-[#b8b8b8] sm:text-lg lg:text-xl lg:leading-9">
                 {caseData.overview}
               </p>
-              <div className="mt-9 flex items-center gap-4">
+              <div className="mt-9 flex flex-wrap items-center gap-4">
                 {caseData.projectURL && (
                   <a
                     href={caseData.projectURL}
@@ -119,12 +119,12 @@ const CaseStudy = () => {
           </div>
         </section>
 
-        <div className="mx-auto w-[1180px] px-8 py-20">
-          <section className="grid grid-cols-[0.8fr_1.2fr] gap-20 border-b border-white/10 pb-20">
+        <div className="mx-auto w-full max-w-[1180px] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+          <section className="grid grid-cols-1 gap-8 border-b border-white/10 pb-12 md:grid-cols-[0.8fr_1.2fr] md:gap-12 lg:gap-20 lg:pb-20">
             <SectionHeading eyebrow="Context" title="The problem to solve" />
             <div>
               <p className="text-lg leading-8 text-[#c1c1c1]">{caseData.challenge}</p>
-              <div className="mt-8 grid grid-cols-2 gap-4">
+              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {caseData.highlights.map((highlight) => (
                   <div key={highlight} className="rounded-2xl border border-white/10 bg-[#141414] p-5">
                     <CheckCircle2 className="text-orange-400" size={21} />
@@ -135,9 +135,9 @@ const CaseStudy = () => {
             </div>
           </section>
 
-          <section className="border-b border-white/10 py-20">
+          <section className="border-b border-white/10 py-12 lg:py-20">
             <SectionHeading eyebrow="Approach" title="How I designed the solution" />
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {caseData.approach.map((item, index) => {
                 const icons = [Target, Layers3, Workflow];
                 const Icon = icons[index % icons.length];
@@ -157,11 +157,11 @@ const CaseStudy = () => {
             </div>
           </section>
 
-          <section className="grid grid-cols-[0.8fr_1.2fr] gap-20 border-b border-white/10 py-20">
+          <section className="grid grid-cols-1 gap-8 border-b border-white/10 py-12 md:grid-cols-[0.8fr_1.2fr] md:gap-12 lg:gap-20 lg:py-20">
             <SectionHeading eyebrow="Engineering" title="Key implementation decisions" />
             <div className="space-y-4">
               {caseData.implementation.map((item, index) => (
-                <div key={item.title} className="grid grid-cols-[48px_1fr] gap-5 rounded-2xl border border-white/10 bg-[#141414] p-6">
+                <div key={item.title} className="grid grid-cols-[36px_minmax(0,1fr)] gap-3 rounded-2xl border border-white/10 bg-[#141414] p-4 sm:grid-cols-[48px_minmax(0,1fr)] sm:gap-5 sm:p-6">
                   <span className="text-2xl font-semibold text-orange-400">{String(index + 1).padStart(2, "0")}</span>
                   <div>
                     <h3 className="text-lg font-semibold text-white">{item.title}</h3>
@@ -172,10 +172,10 @@ const CaseStudy = () => {
             </div>
           </section>
 
-          <section className="py-20">
-            <div className="rounded-[32px] border border-orange-400/20 bg-gradient-to-br from-orange-500/10 via-[#151515] to-[#111111] p-10">
+          <section className="py-12 lg:py-20">
+            <div className="rounded-[24px] border border-orange-400/20 bg-gradient-to-br from-orange-500/10 via-[#151515] to-[#111111] p-5 sm:rounded-[32px] sm:p-8 lg:p-10">
               <SectionHeading eyebrow="Outcome" title="What the project delivered" />
-              <div className="grid grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {caseData.outcomes.map((outcome) => (
                   <div key={outcome.title} className="rounded-2xl bg-black/25 p-6">
                     <p className="text-2xl font-semibold text-white">{outcome.title}</p>
@@ -186,9 +186,9 @@ const CaseStudy = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/10 py-20">
+          <section className="border-t border-white/10 py-12 lg:py-20">
             <SectionHeading eyebrow="More work" title="Explore another case study" />
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               {otherProjects.map((project) => (
                 <a
                   key={project.slug}

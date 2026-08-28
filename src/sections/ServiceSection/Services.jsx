@@ -20,7 +20,7 @@ const Services = () => {
   // const projectNumber = projectCompleted.replace(/[^\d.]/g, "");
 
   return (
-    <section className="section-card rounded-[24px] border border-white/10 bg-[#121212] px-5 py-8 sm:px-8 sm:py-10 lg:px-10">
+    <section id="home" className="section-card rounded-[18px] border border-white/10 bg-[#121212] px-5 py-8 sm:rounded-[24px] sm:px-8 sm:py-10 lg:px-10">
       <div className="flex flex-col gap-6 md:gap-8">
         <div className="text-center md:text-left">
           <p className="text-sm uppercase tracking-[0.35em] text-orange-400">Software Engineer</p>

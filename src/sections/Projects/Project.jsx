@@ -15,16 +15,16 @@ const Project = () => {
     <section id="projects" className="section-card rounded-[24px] border border-white/10 bg-[#121212] px-5 py-8 sm:px-8 sm:py-10 lg:px-10 text-white">
       {/* Heading */}
       <div className="flex flex-col justify-start mb-10 md:text-start xxs:text-center md:my-3 xxs:my-6">
-        <h1 className="md:text-[100px] xs:text-left xxs:text-[50px] xxxs:text-center xxxs:text-[50px] font-bold text-white -mt-8 transform scale-x-96 origin-left uppercase">
+        <h1 className="text-4xl font-bold uppercase leading-none text-white sm:text-5xl xl:text-7xl">
           Recent
         </h1>
-        <h1 className="md:text-[100px] xs:text-left xxxs:-mt-3 xxxs:text-center xxxs:text-[50px] xxs:text-[50px] xxs:-mt-6 font-bold text-[#B6B4BD] md:-mt-12 uppercase">
+        <h1 className="mt-1 text-4xl font-bold uppercase leading-none text-[#B6B4BD] sm:text-5xl xl:text-7xl">
           Projects
         </h1>
       </div>
 
       {/* Project Cards */}
-      <div className="md:w-9/12 lg:w-11/12 flex flex-col gap-6">
+      <div className="flex w-full flex-col gap-6">
         {projects.map((project, index) => {
           const isExpanded = expandedIndex === index;
           return (

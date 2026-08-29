@@ -7,6 +7,9 @@ import {
   Workflow,
 } from "lucide-react";
 import data from "../../../data.json";
+import UnicsiCaseStudy from "./UnicsiCaseStudy";
+import OwrCaseStudy from "./OwrCaseStudy";
+import DukkandaarCaseStudy from "./DukkandaarCaseStudy";
 
 const SectionHeading = ({ eyebrow, title }) => (
   <div className="mb-7">
@@ -36,6 +39,18 @@ const CaseStudy = () => {
         </a>
       </main>
     );
+  }
+
+  if (caseData.slug === "unicsi-multi-tier-dropshipping-saas-platform") {
+    return <UnicsiCaseStudy caseData={caseData} />;
+  }
+
+  if (caseData.slug === "owr-online-store-management-saas") {
+    return <OwrCaseStudy caseData={caseData} />;
+  }
+
+  if (caseData.slug === "dukkandaar-e-commerce-saas-platform") {
+    return <DukkandaarCaseStudy caseData={caseData} />;
   }
 
   const otherProjects = (data.CaseStudies || []).filter(

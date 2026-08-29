@@ -16,16 +16,39 @@
     "exp": "3+ YEARS OF",
     "items": [
       {
-        "title": "Full Stack Developer (Tech Lead) | UNICSI",
+        "featured": true,
+        "company": "UNICSI",
+        "title": "Tech Lead & Full Stack Engineer",
         "date": "Sep 2025 - Present",
+        "engagement": "Commerce SaaS · Product Architecture · Technical Leadership",
+        "summary": "Leading the architecture and delivery of a multi-role commerce platform that connects supplier operations, dropshipper storefronts, platform administration, logistics, and financial workflows in one production system.",
+        "value": [
+          {
+            "label": "Business outcome",
+            "title": "One connected operation",
+            "description": "Replaced fragmented supplier, dropshipper, Shopify, fulfilment, and finance handoffs with a shared operational platform."
+          },
+          {
+            "label": "Engineering scope",
+            "title": "Beyond CRUD commerce",
+            "description": "Designed workflows for synchronization, webhooks, order state, logistics exceptions, ledgers, payouts, tax, and reporting."
+          },
+          {
+            "label": "Leadership",
+            "title": "Architecture through delivery",
+            "description": "Owned R&D and technical direction, reviewed system decisions, mentored engineers, and improved release reliability."
+          }
+        ],
         "responsibilities": [
-          "Led end-to-end architecture and R&D for a multi-tier dropshipping SaaS platform serving suppliers, dropshippers, and super administrators.",
-          "Engineered a Shopify integration layer for product imports and bidirectional order synchronization, significantly reducing manual fulfilment work.",
-          "Built a centralized Super Admin dashboard with real-time control over users, orders, inventory, and financial operations.",
-          "Established an AWS CI/CD pipeline that reduced deployment time and enabled zero-downtime releases across platform services.",
-          "Mentored team members on system design, code quality, and scalable architecture patterns.",
-          "Tech: Node.js, Express.js, React.js, Next.js, TypeScript, PostgreSQL, Sequelize ORM, AWS S3, and AWS Lambda."
-        ]
+          "Architected three connected product surfaces: a supplier portal, a dropshipper marketplace, and an administration control plane.",
+          "Built Shopify OAuth, product publishing, signed webhook, inventory sync, order ingestion, cancellation, refund, and fulfilment workflows.",
+          "Designed multi-carrier logistics with serviceability, AWB generation, tracking, NDR/RTO handling, and supplier rerouting.",
+          "Connected order pricing to wallets, ledgers, supplier payouts, dropshipper earnings, settlements, invoices, penalties, and GST reporting.",
+          "Introduced role-aware access, KYC controls, rate limiting, correlation IDs, migration-led schema changes, focused tests, and reliable cloud delivery."
+        ],
+        "signals": ["3 connected products", "End-to-end ownership", "Production systems"],
+        "tech": ["Node.js", "Express", "Next.js", "React", "TypeScript", "PostgreSQL", "Sequelize", "Redis", "BullMQ", "AWS", "Shopify"],
+        "caseStudySlug": "unicsi-multi-tier-dropshipping-saas-platform"
       },
       {
         "title": "Full Stack Developer | QuadB Technology",

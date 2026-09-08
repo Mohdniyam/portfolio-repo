@@ -16,14 +16,18 @@ import Technology from "./sections/Technology/Technology";
 import FAQ from "./sections/FAQ/FAQ";
 import Footer from "./sections/Footer/Footer";
 import CaseStudy from "./pages/CaseStudy/CaseStudy";
+import SolutionPage from "./pages/Solutions/SolutionPage";
 
 export default function App() {
   const [hash, setHash] = useState(() => window.location.hash);
+  const [path, setPath] = useState(() => window.location.pathname);
 
   useEffect(() => {
     const updateHash = () => setHash(window.location.hash);
+    const updatePath = () => setPath(window.location.pathname);
     window.addEventListener("hashchange", updateHash);
-    return () => window.removeEventListener("hashchange", updateHash);
+    window.addEventListener("popstate", updatePath);
+    return () => { window.removeEventListener("hashchange", updateHash); window.removeEventListener("popstate", updatePath); };
   }, []);
 
   const isCaseStudy = hash.startsWith("#/case-studies/");
@@ -38,6 +42,7 @@ export default function App() {
   }, [hash, isCaseStudy]);
 
   if (isCaseStudy) return <CaseStudy key={hash} />;
+  if (path.startsWith("/solutions/")) return <SolutionPage slug={path.split("/").filter(Boolean)[1]} />;
 
   return (
     <div className="min-h-screen overflow-hidden bg-ink text-white">

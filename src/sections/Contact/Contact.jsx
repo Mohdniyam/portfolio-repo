@@ -1,21 +1,27 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { toast } from "react-toastify";
 import data from "../../../data.json";
+import { getCampaignParams, trackEvent } from "../../utils/analytics";
 const endpoint = "https://script.google.com/macros/s/AKfycbzeWGEQ7kbweXj18tHRckBz-ikhuxS4SiuBbwdVpM1FZh09h-nHbe6PhR2cztn6h6Ou/exec";
 const initial = { name: "", email: "", projectType: "", budget: "", message: "" };
 const projectTypes = ["Custom Software", "Shopify Development", "Website / E-commerce", "Automation / Integration", "Existing Product Improvement", "Not Sure"];
 const budgets = ["Under ₹50k", "₹50k – ₹1.5L", "₹1.5L – ₹5L", "₹5L+", "Let's discuss"];
-export default function ContactForm() {
-  const [form, setForm] = useState(initial);
+export default function ContactForm({ sourcePage = "homepage", defaultProjectType = "", audience = "" }) {
+  const [form, setForm] = useState({ ...initial, projectType: defaultProjectType });
   const [loading, setLoading] = useState(false);
-  const update = ({ target }) => setForm((current) => ({ ...current, [target.name]: target.value }));
+  const started = useRef(false);
+  const update = ({ target }) => {
+    if (!started.current && sourcePage.startsWith("/solutions/")) { started.current = true; trackEvent("solution_form_start", { landing_page: sourcePage, audience }); }
+    setForm((current) => ({ ...current, [target.name]: target.value }));
+  };
   const submit = async (event) => {
     event.preventDefault(); setLoading(true);
     try {
-      const response = await fetch(endpoint, { method: "POST", body: JSON.stringify({ ...form, subject: form.projectType }) });
+      const response = await fetch(endpoint, { method: "POST", body: JSON.stringify({ ...form, subject: form.projectType, landing_page: sourcePage, audience, ...getCampaignParams() }) });
       if (!response.ok) throw new Error("Submission failed");
-      toast.success("Thanks — your project details have been sent."); setForm(initial);
+      if (sourcePage.startsWith("/solutions/")) trackEvent("solution_form_submit", { landing_page: sourcePage, audience });
+      toast.success("Thanks — your project details have been sent."); setForm({ ...initial, projectType: defaultProjectType });
     } catch (error) {
       console.error("Error sending project inquiry:", error);
       toast.error("Your message could not be sent. Please email me directly.");

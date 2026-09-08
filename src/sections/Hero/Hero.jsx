@@ -1,128 +1,19 @@
-import React, { useEffect, useState } from "react";
-import data from "../../../data.json";
-import img from "../../assets/images/moaaz_img.JPG";
-import gitHubSvg from "../../assets/icons/gitHub.svg";
-import leetCodeSvg from "../../assets/icons/leetCode.svg";
-import linkedInSvg from "../../assets/icons/linkedIn.svg";
-import downloadSvg from "../../assets/icons/download.png";
-import resumePDF from "../../assets/resume/mohd_niya_mul_haque.pdf";
-import { removeBackgroundAPI } from "../../api/removeBg";
-
-const Hero = () => {
-  const DEFAULT_PROFILE = "https://media.licdn.com/dms/image/v2/D4E03AQFtql2r7J3xhg/profile-displayphoto-crop_800_800/B4EZ.vYkTpJIAI-/0/1785353882922?e=1788393600&v=beta&t=SgrjaZBh_bnTzynvZsmiWnUAuxGcy5rb_to_ol8lWZg";
-  const [processedImage, setProcessedImage] = useState(DEFAULT_PROFILE);
-  const [copied, setCopied] = useState(false); // ✅ state for copy status
-
-  const heroData = data.Hero?.[0];
-  const profileName = heroData?.name || "Mohd Niya Mul Haque";
-  const profileDescription =
-    heroData?.description ||
-    "Full Stack Software Engineer building scalable SaaS, e-commerce and cloud applications.";
-  const emailAddress = heroData?.email || "";
-
-  useEffect(() => {
-    const processImage = async () => {
-      try {
-        const imageURL = await removeBackgroundAPI(heroData?.imageURL || DEFAULT_PROFILE);
-        if (imageURL) setProcessedImage(imageURL);
-      } catch (error) {
-        console.error("Error removing background:", error);
-      }
-    };
-    processImage();
-  }, [heroData?.imageURL]);
-
-  const defaultLinkedIn =
-    "https://www.linkedin.com/in/mohd-niya-mul-haque-cse/?trk=public_profile_browsemap";
-
-  const linkUrl = heroData?.linkedIn || defaultLinkedIn;
-
-  const handleCopyEmail = () => {
-    if (!emailAddress) return;
-    navigator.clipboard.writeText(emailAddress);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <div
-      id="hero"
-      className="mx-auto flex w-full max-w-md flex-col items-center justify-center gap-4 rounded-[22px] bg-gradient-to-b from-white via-[#fcfbfa] to-[#f4f2ee] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.16)] sm:rounded-[28px] sm:p-7 lg:max-w-[360px]"
-    >
-      {/* Profile image box */}
-      <div className="rounded-[24px] border border-black/5 bg-gradient-to-br from-[#111111] via-[#242424] to-[#0f0f0f] p-2 shadow-inner">
-        <img
-          src={processedImage || img}
-          alt={profileName}
-          className="h-52 w-44 rounded-[18px] object-cover sm:h-60 sm:w-56 lg:h-64 lg:w-60"
-        />
+import { ArrowDownRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
+const proof = ["3.5+ years engineering experience", "Production systems", "End-to-end delivery"];
+export default function Hero() {
+  return <section id="top" className="relative border-b border-white/[0.08] pt-[72px]">
+    <div className="grid-texture absolute inset-0 opacity-40" />
+    <div className="site-container relative grid min-h-[calc(100svh-72px)] items-center gap-14 py-20 lg:grid-cols-[1fr_340px] lg:py-24 xl:gap-24">
+      <div>
+        <p className="eyebrow">Software engineering <span>•</span> Shopify <span>•</span> Automation</p>
+        <h1 className="mt-7 max-w-[1000px] text-[clamp(3rem,7.5vw,7.3rem)] font-medium leading-[0.94] tracking-[-0.065em]">I build software that helps businesses <span className="text-accent">sell, operate &amp; automate.</span></h1>
+        <p className="mt-8 max-w-2xl text-base leading-8 text-white/55 sm:text-lg sm:leading-9">I partner with startups, e-commerce brands and growing businesses to build custom software, Shopify experiences and operational automation—from idea to production.</p>
+        <div className="mt-9 flex flex-col gap-3 sm:flex-row"><a href="#contact" className="button button-primary justify-center">Discuss your project <ArrowUpRight size={17} /></a><a href="#work" className="button button-secondary justify-center">Explore my work <ArrowDownRight size={17} /></a></div>
       </div>
-
-      <div className="text-center">
-        <p className="text-[11px] uppercase tracking-[0.35em] text-orange-500">
-          Full Stack Software Engineer
-        </p>
-        <h2 className="md:text-[32px] xxs:text-[28px] font-bold text-black mt-2">
-          {profileName}
-        </h2>
-        <p className="mt-2 text-[13px] uppercase tracking-[0.25em] text-gray-500">
-          Node.js • React • AWS
-        </p>
-      </div>
-
-      <button
-        onClick={handleCopyEmail}
-        className="flex items-center gap-2 bg-[#111111] hover:bg-[#222222] text-sm px-3 py-1.5 rounded-full text-white transition-all duration-200"
-      >
-        {copied ? "Copied!" : "Copy Email"}
-      </button>
-
-      <p className="text-gray-600 text-center text-[14px] leading-6 px-2">
-        {profileDescription}
-      </p>
-
-      <div className="flex justify-center items-center gap-5 pt-1">
-        <a
-          href={heroData?.leetCode}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-full p-3 transition hover:bg-black/5"
-          aria-label="Visit LeetCode profile"
-        >
-          <img src={leetCodeSvg} alt="LeetCode" className="w-6 h-6" />
-        </a>
-        <a
-          href={heroData?.gitHub}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-full p-3 transition hover:bg-black/5"
-          title="View my GitHub profile (login may be required)"
-          aria-label="Visit GitHub profile"
-        >
-          <img src={gitHubSvg} alt="GitHub" className="w-6 h-6" />
-        </a>
-        <a
-          href={linkUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-full p-3 transition hover:bg-black/5"
-          title="View my LinkedIn profile (login may be required)"
-          aria-label="Visit LinkedIn profile"
-        >
-          <img src={linkedInSvg} alt="LinkedIn" className="w-6 h-6" />
-        </a>
-        <a
-          href={resumePDF}
-          download="Mohd_Niya_Mul_Haque_Resume.pdf"
-          className="rounded-full p-3 transition hover:bg-black/5"
-          title="Download Resume"
-          aria-label="Download resume"
-        >
-          <img src={downloadSvg} alt="Resume" className="w-6 h-6" />
-        </a>
-      </div>
+      <aside className="self-end border-l border-white/10 pl-6 lg:mb-4 lg:pl-8" aria-label="Professional summary">
+        <p className="text-xs uppercase leading-6 tracking-[0.22em] text-white/35">Software engineer &amp;<br />development partner</p><p className="mt-5 text-2xl font-medium leading-snug tracking-[-0.03em]">Mohd Niya Mul Haque</p>
+        <div className="mt-8 space-y-4">{proof.map((item) => <p key={item} className="flex items-center gap-3 text-sm text-white/55"><CheckCircle2 className="text-accent" size={16} />{item}</p>)}</div>
+      </aside>
     </div>
-  );
-};
-
-export default Hero;
+  </section>;
+}

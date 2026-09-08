@@ -1,75 +1,59 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 @theme {
-  /* Custom Screens (v4 way) */
-  --breakpoint-xxxs: 300px;
   --breakpoint-xxs: 375px;
-  --breakpoint-xs: 480px;
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
-
-  /* Figma colors */
-  --color-fgm-black: #151312;
-  --color-fgm-white: #ffffff;
-  --color-fgm-gray: #998f8f;
-  --color-fgm-green: #c5ff41;
-  --color-fgm-orange: #f46c38;
-  --color-fgm-darkGray: #6a6b6e;
-  --color-fgm-softGray: #b6b4bd;
-  --color-fgm-youtube: #ff2600;
-  --color--fgm-url: #9769ff;
+  --color-ink: #0b0c0c;
+  --color-surface: #101212;
+  --color-accent: #d7ff64;
 }
 
-@layer base {
-  body {
-    font-family: "Poppins", sans-serif;
-  }
+:root {
+  color-scheme: dark;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-synthesis: none;
+  --container: 1440px;
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --section-space: clamp(5rem, 9vw, 9rem);
 }
 
-.testing {
-  overflow-y: hidden;
-}
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; background: #0b0c0c; }
+body { margin: 0; min-width: 320px; overflow-x: hidden; background: #0b0c0c; color: #fff; -webkit-font-smoothing: antialiased; }
+*, *::before, *::after { box-sizing: border-box; }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+::selection { background: #d7ff64; color: #0b0c0c; }
 
-.hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
+.site-container { width: min(100%, var(--container)); margin-inline: auto; padding-inline: var(--gutter); }
+.section-pad { padding-block: var(--section-space); }
+.eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem; color: #d7ff64; font-size: .68rem; font-weight: 600; letter-spacing: .21em; line-height: 1.7; text-transform: uppercase; }
+.eyebrow span { color: rgb(255 255 255 / .24); }
+.section-heading { max-width: 46rem; }
+.section-heading h2 { margin-top: 1.25rem; font-size: clamp(2.4rem, 5vw, 5.2rem); font-weight: 500; line-height: 1.02; letter-spacing: -.055em; }
+.section-copy { margin-top: 1.5rem; max-width: 39rem; color: rgb(255 255 255 / .45); font-size: 1rem; line-height: 2; }
+.button { display: inline-flex; min-height: 2.9rem; align-items: center; gap: .6rem; border-radius: 999px; padding: .8rem 1.25rem; font-size: .78rem; font-weight: 600; transition: border-color .2s, background-color .2s, color .2s, transform .2s; }
+.button:hover { transform: translateY(-1px); }
+.button-primary { background: #d7ff64; color: #10120a; }
+.button-primary:hover { background: #fff; }
+.button-secondary { border: 1px solid rgb(255 255 255 / .15); color: rgb(255 255 255 / .76); }
+.button-secondary:hover { border-color: rgb(255 255 255 / .35); background: rgb(255 255 255 / .05); color: #fff; }
+.nav-link { color: rgb(255 255 255 / .48); font-size: .75rem; transition: color .2s; }
+.nav-link:hover { color: #fff; }
+.grid-texture { pointer-events: none; background-image: linear-gradient(rgb(255 255 255 / .035) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / .035) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to bottom, black, transparent 90%); }
+.field { display: flex; min-width: 0; flex-direction: column; gap: .65rem; }
+.field > span { color: rgb(255 255 255 / .55); font-size: .72rem; font-weight: 500; text-transform: uppercase; letter-spacing: .13em; }
+.field em { margin-left: .35rem; color: rgb(255 255 255 / .25); font-style: normal; text-transform: none; letter-spacing: 0; }
+.field input, .field select, .field textarea { width: 100%; border: 1px solid rgb(255 255 255 / .11); border-radius: .75rem; outline: none; background: rgb(0 0 0 / .2); padding: .9rem 1rem; color: #fff; transition: border-color .2s, box-shadow .2s; }
+.field textarea { resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: rgb(255 255 255 / .25); }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: rgb(215 255 100 / .65); box-shadow: 0 0 0 3px rgb(215 255 100 / .08); }
+:focus-visible { outline: 2px solid #d7ff64; outline-offset: 4px; }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+@media (max-width: 639px) {
+  :root { --gutter: 1.25rem; --section-space: 5rem; }
+  .section-heading h2 { font-size: clamp(2.2rem, 12vw, 3.3rem); }
 }
-
-/* Smooth & hidden scrollbar until hover */
-.custom-scrollbar {
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #4ade80 transparent; /* thumb and track */
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-  height: 8px; /* horizontal scrollbar height */
-  transition: opacity 0.3s ease;
-  opacity: 0; /* hidden initially */
-}
-
-.custom-scrollbar:hover::-webkit-scrollbar {
-  opacity: 1; /* visible when hovered */
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #4ade80; /* Tailwind green-400 */
-  border-radius: 9999px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #22c55e; /* Tailwind green-500 */
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

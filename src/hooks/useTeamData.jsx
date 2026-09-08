@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 /**
  * Custom hook for fetching and managing team data
@@ -10,7 +10,7 @@ const useTeamData = (apiUrl) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const fetchTeam = async () => {
+  const fetchTeam = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -35,13 +35,13 @@ const useTeamData = (apiUrl) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [apiUrl]);
 
   useEffect(() => {
     if (apiUrl) {
       fetchTeam();
     }
-  }, [apiUrl]);
+  }, [apiUrl, fetchTeam]);
 
   return {
     team,

@@ -1,0 +1,3 @@
+import { ArrowUpRight } from "lucide-react";
+import data from "../../../data.json";
+export default function Footer() { const info = data.Contact[0]; return <footer className="border-t border-white/10"><div className="site-container flex flex-col gap-6 py-8 text-sm text-white/35 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} Mohd Niya Mul Haque</p><div className="flex flex-wrap gap-5"><a href={`mailto:${info.email}`} className="hover:text-white">Email</a><a href={info.linkedIn} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:text-white">LinkedIn <ArrowUpRight size={13} /></a><a href="#top" className="hover:text-white">Back to top ↑</a></div></div></footer>; }

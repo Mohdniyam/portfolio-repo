@@ -1,83 +1,64 @@
-import ContactForm from "./sections/Contact/Contact";
-import React, { Suspense, useEffect, useState } from "react";
-import EngineeringPrinciples from "./sections/EngineeringPrinciples/EngineeringPrinciples";
-import Experience from "./sections/Experience/Experience";
-import FlagshipProject from "./sections/FlagshipProject/FlagshipProject";
-const GithubContributions = React.lazy(() => import("./sections/GitHubGraph/GithubContributions"));
-import Hero from "./sections/Hero/Hero";
+import { useEffect, useState } from "react";
 import Nav from "./sections/Nav/Nav";
-import Project from "./sections/Projects/Project";
+import Hero from "./sections/Hero/Hero";
 import Services from "./sections/ServiceSection/Services";
-const SkillsSection = React.lazy(() => import("./sections/Skills/SkillsSection"));
-import Team from "./sections/Team/Team";
-import WhatIBuild from "./sections/WhatIBuild/WhatIBuild";
+import FlagshipProject from "./sections/FlagshipProject/FlagshipProject";
+import Project from "./sections/Projects/Project";
+import EngineeringPrinciples from "./sections/EngineeringPrinciples/EngineeringPrinciples";
+import ContactForm from "./sections/Contact/Contact";
+import TrustBar from "./sections/TrustBar/TrustBar";
+import Problems from "./sections/Problems/Problems";
+import Capabilities from "./sections/Capabilities/Capabilities";
+import Process from "./sections/Process/Process";
+import WhyWorkWithMe from "./sections/WhyWorkWithMe/WhyWorkWithMe";
+import About from "./sections/About/About";
+import Technology from "./sections/Technology/Technology";
+import FAQ from "./sections/FAQ/FAQ";
+import Footer from "./sections/Footer/Footer";
 import CaseStudy from "./pages/CaseStudy/CaseStudy";
 
 export default function App() {
-  const [hash, setHash] = useState(() =>
-    typeof window !== "undefined" ? window.location.hash : ""
-  );
+  const [hash, setHash] = useState(() => window.location.hash);
 
   useEffect(() => {
-    const handleHashChange = () => setHash(window.location.hash);
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    const updateHash = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
   }, []);
 
   const isCaseStudy = hash.startsWith("#/case-studies/");
 
   useEffect(() => {
-    if (isCaseStudy || !hash.startsWith("#")) return;
-
-    const sectionId = hash.slice(1);
-    requestAnimationFrame(() => {
-      document.getElementById(sectionId)?.scrollIntoView();
-    });
+    if (isCaseStudy) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    const id = hash.replace(/^#/, "");
+    if (id) requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView());
   }, [hash, isCaseStudy]);
 
-  if (isCaseStudy) {
-    return (
-      <div className="min-h-screen bg-fgm-black text-white">
-        <CaseStudy key={hash} />
-      </div>
-    );
-  }
+  if (isCaseStudy) return <CaseStudy key={hash} />;
 
   return (
-    <div className="min-h-screen bg-fgm-black text-white">
+    <div className="min-h-screen overflow-hidden bg-ink text-white">
       <Nav />
-      <main className="mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-5 px-4 pb-8 pt-24 sm:gap-8 sm:px-6 lg:grid-cols-[minmax(280px,360px)_minmax(0,1fr)] lg:px-8">
-        <div className="w-full self-start lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-auto">
-          <div className="flex justify-start">
-            <Hero />
-          </div>
-        </div>
-
-        <div
-          className="min-w-0 w-full"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            paddingTop: 'env(safe-area-inset-top, 0px)'
-          }}
-        >
-          <div className="space-y-5 sm:space-y-8">
-            <Services />
-            <WhatIBuild />
-            <FlagshipProject />
-            <Experience />
-            <Project />
-            <EngineeringPrinciples />
-            <Suspense fallback={<div className="py-6 text-center text-gray-400">Loading contributions...</div>}>
-              <GithubContributions />
-            </Suspense>
-            <Suspense fallback={<div className="py-6 text-center text-gray-400">Loading skills...</div>}>
-              <SkillsSection />
-            </Suspense>
-            <ContactForm />
-          </div>
-        </div>
+      <main>
+        <Hero />
+        <TrustBar />
+        <Problems />
+        <Services />
+        <FlagshipProject />
+        <Project />
+        <Capabilities />
+        <Process />
+        <WhyWorkWithMe />
+        <About />
+        <EngineeringPrinciples />
+        <Technology />
+        <FAQ />
+        <ContactForm />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import useTeamData from "../../hooks/useTeamData"; // Adjust path as needed
 import img from "../../assets/images/moaaz_img.JPG";
 
 const Team = () => {

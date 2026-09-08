@@ -1,184 +1,29 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { toast } from "react-toastify";
-import {
-  Listbox,
-  ListboxOption,
-  ListboxOptions,
-  ListboxButton,
-} from "@headlessui/react";
 import data from "../../../data.json";
-
-const options = [
-  { value: "", label: "Select..." },
-  { value: "project", label: "New Project" },
-  { value: "collaboration", label: "Collaboration" },
-  { value: "other", label: "Other" },
-];
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+const endpoint = "https://script.google.com/macros/s/AKfycbzeWGEQ7kbweXj18tHRckBz-ikhuxS4SiuBbwdVpM1FZh09h-nHbe6PhR2cztn6h6Ou/exec";
+const initial = { name: "", email: "", projectType: "", budget: "", message: "" };
+const projectTypes = ["Custom Software", "Shopify Development", "Website / E-commerce", "Automation / Integration", "Existing Product Improvement", "Not Sure"];
+const budgets = ["Under ₹50k", "₹50k – ₹1.5L", "₹1.5L – ₹5L", "₹5L+", "Let's discuss"];
+export default function ContactForm() {
+  const [form, setForm] = useState(initial);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const contactData = data.Contact?.[0];
-
-  const handleChange = (e) => {
-    console.log(e.target.name, e.target.value);
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      setError("Please fill in all fields.");
-      return;
-    }
-    setLoading(true);
-
-    // Here you would typically handle form submission, e.g., send data to a server
+  const update = ({ target }) => setForm((current) => ({ ...current, [target.name]: target.value }));
+  const submit = async (event) => {
+    event.preventDefault(); setLoading(true);
     try {
-      // Here you would typically handle the form submission,
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbzeWGEQ7kbweXj18tHRckBz-ikhuxS4SiuBbwdVpM1FZh09h-nHbe6PhR2cztn6h6Ou/exec",
-        {
-          method: "POST",
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-          }),
-        }
-      );
-
-      toast.success("Form submitted successfully!", { autoClose: 3000 });
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-    } catch (err) {
-      console.error("Error sending message:", err);
-      toast.error(
-        "Sorry, there was an error sending your message. Please try again later.",
-        { autoClose: 3000 }
-      );
-    } finally {
-      setLoading(false);
-    }
-    console.log("Form submitted:", formData);
+      const response = await fetch(endpoint, { method: "POST", body: JSON.stringify({ ...form, subject: form.projectType }) });
+      if (!response.ok) throw new Error("Submission failed");
+      toast.success("Thanks — your project details have been sent."); setForm(initial);
+    } catch (error) {
+      console.error("Error sending project inquiry:", error);
+      toast.error("Your message could not be sent. Please email me directly.");
+    } finally { setLoading(false); }
   };
-
-  return (
-    <div
-      id="contact"
-      className="section-card rounded-[24px] border border-white/10 bg-[#121212] px-5 py-8 text-white shadow-lg sm:px-8 sm:py-10 lg:px-10"
-    >
-      {/* Contact card */}
-      <div className="w-full mb-6">
-        <div>
-          <p className="text-sm text-gray-400">Get in touch</p>
-          <h3 className="text-2xl font-bold">{contactData?.name}</h3>
-          <p className="text-sm text-gray-400">{data.Hero?.[0]?.title || "Full Stack Software Engineer"}</p>
-        </div>
-      </div>
-      <div className="flex flex-col items-center xs:items-start sm:items-start text-center sm:text-left mb-10 my-6">
-        <h1 className="text-left text-4xl font-bold uppercase leading-none text-white sm:text-5xl xl:text-7xl">
-          Let's Work
-        </h1>
-        <h1 className="mt-2 text-left text-4xl font-bold uppercase leading-none text-[#B6B4BD] sm:text-5xl xl:text-7xl">
-          Together
-        </h1>
-      </div>
-
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-4"
-        // style={{ border: "2px solid red" }}
-      >
-        <div className="flex flex-col md:flex-row gap-4">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="flex-1 p-3 rounded-lg bg-slate-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 lg:w-1/2"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your@email.com"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="flex-1 p-3 rounded-lg bg-slate-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 lg:w-1/2"
-          />
-        </div>
-        <Listbox>
-          <div className="relative">
-            <ListboxButton className="w-full p-3 rounded-lg bg-slate-800 text-white text-left focus:outline-none focus:ring-2 focus:ring-orange-500">
-              {({ value }) => value?.label ?? "Select..."}
-            </ListboxButton>
-
-            <ListboxOptions className="absolute mt-1 w-full rounded-lg bg-slate-900 shadow-lg z-10">
-              {options.map((option, idx) => (
-                <ListboxOption
-                  key={idx}
-                  value={option}
-                  className="cursor-pointer select-none p-2 text-white text-left hover:bg-slate-700"
-                  onClick={() =>
-                    setFormData({ ...formData, subject: option.value })
-                  }
-                >
-                  {option.label}
-                </ListboxOption>
-              ))}
-            </ListboxOptions>
-          </div>
-        </Listbox>
-        <textarea
-          name="message"
-          placeholder="Message"
-          rows="5"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          className="p-3 rounded-lg bg-slate-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
-        />
-
-        {error && <p className="text-red-500 text-sm">{error}</p>}
-
-        <button
-          type="submit"
-          className="p-3 rounded-lg bg-orange-500 hover:bg-orange-600 font-semibold transition"
-          disabled={loading}
-        >
-          {loading ? "Submitting..." : "Submit"}
-        </button>
-      </form>
-      <p className="mt-6 break-words text-center text-xs text-gray-400 sm:text-sm">
-        Made by
-        <a href="#" className="text-orange-500 hover:underline mx-1">
-          {contactData.name}
-        </a>
-        |
-        <a
-          href={`mailto:${contactData.email}`}
-          className="text-orange-500 hover:underline mx-1"
-        >
-          {contactData.email}
-        </a>
-        | Powered by
-        <a href="#" className="text-orange-500 hover:underline mx-1">
-          Growing Mindset
-        </a>
-      </p>
-    </div>
-  );
-};
-
-export default ContactForm;
+  const email = data.Contact[0].email;
+  return <section id="contact" className="section-pad"><div className="site-container"><div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#141615]"><div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+    <div className="relative border-b border-white/10 p-7 sm:p-10 lg:border-b-0 lg:border-r lg:p-14"><div className="grid-texture absolute inset-0 opacity-20" /><div className="relative"><p className="eyebrow">Start a conversation</p><h2 className="mt-6 text-[clamp(2.5rem,5vw,5rem)] font-medium leading-[1] tracking-[-0.055em]">Have a software problem worth solving?</h2><p className="mt-6 max-w-lg text-base leading-8 text-white/45">Tell me what you’re building, what isn’t working, or what you’d like to automate. I’ll reply with useful next steps.</p><a href={`mailto:${email}`} className="mt-10 inline-flex items-center gap-3 text-sm text-white/60 hover:text-white"><Mail size={17} className="text-accent" />{email}</a><p className="mt-5 text-xs text-white/30">Typically replies within 1–2 business days.</p></div></div>
+    <form onSubmit={submit} className="grid gap-6 p-7 sm:grid-cols-2 sm:p-10 lg:p-14"><label className="field"><span>Name *</span><input name="name" value={form.name} onChange={update} autoComplete="name" required placeholder="Your name" /></label><label className="field"><span>Work email *</span><input type="email" name="email" value={form.email} onChange={update} autoComplete="email" required placeholder="you@company.com" /></label><label className="field"><span>Project type *</span><select name="projectType" value={form.projectType} onChange={update} required><option value="" disabled>Select a service</option>{projectTypes.map(item => <option key={item}>{item}</option>)}</select></label><label className="field"><span>Budget <em>Optional</em></span><select name="budget" value={form.budget} onChange={update}><option value="">Select a range</option>{budgets.map(item => <option key={item}>{item}</option>)}</select></label><label className="field sm:col-span-2"><span>Project description *</span><textarea name="message" value={form.message} onChange={update} required rows="6" placeholder="What are you looking to build, improve or automate?" /></label><div className="flex flex-col gap-4 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between"><p className="text-xs leading-5 text-white/30">Your details are only used to respond to this inquiry.</p><button type="submit" disabled={loading} className="button button-primary justify-center disabled:cursor-wait disabled:opacity-60">{loading ? "Sending…" : "Discuss my project"}<ArrowUpRight size={17} /></button></div></form>
+  </div></div></div></section>;
+}

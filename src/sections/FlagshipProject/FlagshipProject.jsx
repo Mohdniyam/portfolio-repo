@@ -1,48 +1,6 @@
-import React from "react";
-import { ArrowUpRight } from "lucide-react";
-
-const FlagshipProject = () => {
-  return (
-    <section id="flagship" className="section-card rounded-[24px] border border-white/10 bg-[#121212] px-5 py-8 sm:px-8 sm:py-10 lg:px-10 text-white">
-      <div className="mb-8 text-center md:text-left">
-        <p className="text-sm uppercase tracking-[0.35em] text-orange-400">Featured Work</p>
-        <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-white">
-          UNICSI — a multi-tenant commerce platform built for operational scale.
-        </h2>
-      </div>
-
-      <div className="rounded-[28px] border border-white/10 bg-gradient-to-br from-[#151515] via-[#191919] to-[#121212] p-6 md:p-10 shadow-[0_15px_50px_rgba(0,0,0,0.35)]">
-        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-          <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-[#b8b2b2]">Flagship Project</p>
-            <h3 className="mt-3 text-2xl font-semibold text-white">Multi-Tenant Dropshipping & Commerce Platform</h3>
-            <p className="mt-4 text-base leading-8 text-[#cfc8c8]">
-              A production-grade commerce platform connecting suppliers, dropshippers, Shopify stores and administrators through centralized workflows for products, inventory, orders, shipping, invoicing and payouts.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href="https://unicsi.com" target="_blank" rel="noreferrer" className="rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-orange-600">
-                View Application
-              </a>
-              <a href="#contact" className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10">
-                Discuss the Work
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-[#0f0f0f] p-6">
-            <h4 className="text-lg font-semibold text-white">What the platform handles</h4>
-            <ul className="mt-4 space-y-3 text-sm text-[#d8d0d0]">
-              <li className="flex items-start gap-2"><span className="mt-1 h-2.5 w-2.5 rounded-full bg-orange-500" />Supplier portal and dropshipper workflows</li>
-              <li className="flex items-start gap-2"><span className="mt-1 h-2.5 w-2.5 rounded-full bg-orange-500" />Product, variant and inventory management</li>
-              <li className="flex items-start gap-2"><span className="mt-1 h-2.5 w-2.5 rounded-full bg-orange-500" />Shopify synchronization and order lifecycle handling</li>
-              <li className="flex items-start gap-2"><span className="mt-1 h-2.5 w-2.5 rounded-full bg-orange-500" />Shipping, invoices, payouts and operational exceptions</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default FlagshipProject;
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+const flow = ["Supplier", "Marketplace", "Shopify", "Orders", "Logistics", "Settlements"];
+export default function FlagshipProject() { return <section id="work" className="section-pad"><div className="site-container"><div className="overflow-hidden rounded-[2rem] border border-[#79d3ba]/20 bg-[#091412]">
+  <div className="grid gap-12 p-6 sm:p-10 lg:grid-cols-[0.92fr_1.08fr] lg:p-14 xl:p-16"><div><p className="eyebrow text-[#78d6bc]!">Featured case study · UNICSI</p><h2 className="mt-6 text-[clamp(2.3rem,4.5vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.055em]">A multi-tenant commerce platform built for operational scale.</h2><p className="mt-6 max-w-xl text-base leading-8 text-white/50">A production platform connecting supplier catalogues, dropshipper storefronts, Shopify orders, multi-carrier logistics and financial settlements through one shared operating system.</p><ul className="mt-8 space-y-3 text-sm text-white/60">{["Three role-specific product experiences", "Synchronized commerce and order workflows", "Traceable logistics, payouts and exceptions"].map(item => <li key={item} className="flex items-center gap-3"><CheckCircle2 size={16} className="text-[#78d6bc]" />{item}</li>)}</ul><a href="#/case-studies/unicsi-multi-tier-dropshipping-saas-platform" className="button mt-9 bg-[#ddfff5] text-[#07100f] hover:bg-white">Explore case study <ArrowUpRight size={17} /></a></div>
+  <div className="relative flex min-h-[420px] items-center justify-center"><div className="absolute inset-0 rounded-full bg-[#58bdab]/10 blur-3xl" /><div className="relative w-full rounded-[1.75rem] border border-white/10 bg-[#0c1b18] p-5 shadow-2xl sm:p-7"><div className="flex items-center justify-between border-b border-white/10 pb-5"><p className="text-xs uppercase tracking-[0.2em] text-white/40">Connected workflow</p><span className="h-2.5 w-2.5 rounded-full bg-[#79d3ba] shadow-[0_0_14px_#79d3ba]" /></div><div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3">{flow.map((item,i) => <div key={item} className="relative rounded-xl border border-white/10 bg-white/[0.035] p-4"><p className="text-[10px] text-[#79d3ba]">0{i+1}</p><p className="mt-5 text-sm font-medium">{item}</p>{i < flow.length-1 && <span className="absolute -right-2 top-1/2 z-10 hidden h-px w-4 bg-[#79d3ba]/60 sm:block" />}</div>)}</div><div className="mt-4 rounded-xl border border-white/10 bg-white/[0.025] p-4"><div className="flex items-center justify-between text-xs text-white/40"><span>Operational state</span><span className="text-[#79d3ba]">Synchronized</span></div><div className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/10"><div className="h-full w-[88%] rounded-full bg-gradient-to-r from-[#4caeaa] to-[#8bd879]" /></div></div></div></div>
+  </div></div></div></section>; }

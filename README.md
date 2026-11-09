@@ -2,6 +2,12 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Cloudflare Workers deployment
+
+The Wrangler config serves the Vite output in `dist` as static assets. In the Cloudflare
+Workers Builds settings, set the build command to `npm run build` and the deploy command
+to `npx wrangler deploy`. Keep the project root directory set to the repository root.
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
